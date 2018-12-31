@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
+import App from './components/container/DemoComponent';
 
-const App = () => <div>Smurfs are upon us...</div>;
+const store = configureStore();;
 
-ReactDOM.render(<App />, document.querySelector('#app'));
+ReactDOM.render((
+  <Provider store={store}>
+    <App />
+  </Provider>
+), document.querySelector('#app'));
