@@ -1,5 +1,5 @@
 {
-  "name": "express-authorshaven-frontend",
+  "name": "stackoverflow-frontend",
   "version": "1.0.0",
   "description": "A Social platform for the creative at heart",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andela/noldor-ah-frontend.git"
+    "url": "git+https://github.com/ajimae/8.1.git"
   },
-  "author": "Andela Simulations Programme",
+  "author": "Andela Bootcamp Programme",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andela/noldor-ah-frontend/issues"
+    "url": "https://github.com/ajimae/8.1/issues"
   },
-  "homepage": "https://github.com/andela/noldor-ah-frontend#readme",
+  "homepage": "https://github.com/ajimae/8.1#readme",
   "dependencies": {
     "@babel/node": "^7.0.0",
     "axios": "^0.18.0",
@@ -29,7 +29,9 @@
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
-    "redux-persist": "^5.10.0"
+    "redux-immutable-state-invariant": "^2.1.0",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
