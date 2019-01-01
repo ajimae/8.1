@@ -5,7 +5,10 @@ import { demoAction } from '../../redux/actionCreators/demoAction';
 
 class App extends Component {
   demoAction = () => {
-    this.props.demo();
+    document.querySelector('.title').innerHTML = 'Active Page';
+    setTimeout(() => {
+      document.querySelector('.title').innerHTML = 'Demo Page';
+    }, 3000);
   }
 
   render() {
@@ -13,9 +16,6 @@ class App extends Component {
       <div>
         <center>
           <h1 className="title">Demo Page</h1>
-          <pre>
-            { JSON.stringify(this.props) }
-          </pre>
           <button className="button" onClick={this.demoAction}>Test redux action</button>
         </center>
       </div>
