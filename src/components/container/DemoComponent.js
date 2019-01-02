@@ -4,18 +4,22 @@ import PropTypes from 'prop-types';
 import { demoAction } from '../../redux/actionCreators/demoAction';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: 'Demo Page'
+    };
+  }
+
   demoAction = () => {
-    document.querySelector('.title').innerHTML = 'Active Page';
-    setTimeout(() => {
-      document.querySelector('.title').innerHTML = 'Demo Page';
-    }, 3000);
+    this.setState({ title: 'Active Page' });
   }
 
   render() {
     return (
       <div>
         <center>
-          <h1 className="title">Demo Page</h1>
+          <h1 className="title">{this.state.title}</h1>
           <button className="button" onClick={this.demoAction}>Test redux action</button>
         </center>
       </div>
