@@ -46,7 +46,7 @@ class Signup extends Component {
     if (typeof signupProps !== 'undefined' && signupProps.success !== 'undefined') {
       const response = signupProps.success;
       notifier(response, 'success');
-      return setTimeout(() => history.push('/', { prev: 'signup' }), 3000);
+      return setTimeout(() => history.push('/activity', { prev: 'signup' }), 3000);
     }
 
     return (
