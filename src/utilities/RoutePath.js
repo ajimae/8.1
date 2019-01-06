@@ -4,7 +4,7 @@ const ROUTE_PATH = {
     signup: '/signup',
     login: '/login',
   },
-  demoPage: '/demo'
+  activity: '/activity',
 };
 
 export default ROUTE_PATH;

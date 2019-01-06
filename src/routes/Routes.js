@@ -9,6 +9,7 @@ import NotFound from '../components/container/NotFound';
 import Signup from '../components/container/Signup';
 import Homepage from '../components/container/Home';
 import NavBar from '../components/view/navBar';
+import Activity from '../components/container/Activity';
 
 const history = createHistory();
 
@@ -21,6 +22,7 @@ const Routes = () => {
           <Route path={ROUTE_PATH.homepage} component={Homepage} exact />
           <Route path={ROUTE_PATH.user.login} component={Login} />
           <Route path={ROUTE_PATH.user.signup} component={Signup} />
+          <Route path={ROUTE_PATH.activity} component={Activity} />
           <Route component={NotFound} />
         </Switch>
       </div>
