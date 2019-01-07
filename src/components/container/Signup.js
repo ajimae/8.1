@@ -30,25 +30,15 @@ class Signup extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    this.props.signup(this.state);
+    const acxn = await this.props.signup(this.state);
+    if (acxn.type === 'USER_SIGNUP_FAILURE') {
+      return notifier(acxn.error.error, 'success');
+    }
+    notifier('Signup successful', 'success');
+    return setTimeout(() => this.props.history.push('/activity', { prev: 'signup' }), 5000);
   }
 
   render() {
-    const {
-      signupProps, history
-    } = this.props;
-
-
-    if (typeof signupProps !== 'undefined' && signupProps.error !== 'undefined') {
-      const response = signupProps.error;
-      notifier(response, 'success');
-    }
-    if (typeof signupProps !== 'undefined' && signupProps.success !== 'undefined') {
-      const response = signupProps.success;
-      notifier(response, 'success');
-      return setTimeout(() => history.push('/activity', { prev: 'signup' }), 3000);
-    }
-
     return (
       <div>
         <ToastContainer />

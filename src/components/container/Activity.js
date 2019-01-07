@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropType from 'prop-types';
 import ActivityView from '../view/activity';
 import { activity } from '../../redux/actionCreators/activity';
 
@@ -20,7 +21,7 @@ class Activity extends Component {
 
   render() {
     let allQuestion;
-    if (typeof this.state.activity !== 'undefined' 
+    if (typeof this.state.activity !== 'undefined'
           && typeof this.state.activity.data !== 'undefined') {
       const { Questions } = this.state.activity.data;
       allQuestion = Questions;
@@ -40,6 +41,10 @@ class Activity extends Component {
     );
   }
 }
+
+Activity.propTypes = {
+  activity: PropType.func,
+};
 
 const mapStateToProps = (state) => {
   return {

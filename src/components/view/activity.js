@@ -3,7 +3,6 @@ import '../../static/styles/activity.scss';
 
 const Activity = (props) => {
   const { question } = props;
-  console.log(question)
   return (
     <article className="post">
       <h4><a className="is-link">{question.title}</a></h4>

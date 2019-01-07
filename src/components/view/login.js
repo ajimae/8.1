@@ -1,7 +1,11 @@
 import React from 'react';
 import '../../static/styles/form.scss';
+import PropType from 'prop-types';
 
-const Login = () => {
+const Login = (props) => {
+  const {
+    login, onChange
+  } = props;
   return (
     <section className="hero is-success is-fullheight">
       <div className="hero-body">
@@ -10,15 +14,25 @@ const Login = () => {
             <h3 className="title has-text-grey">Login</h3>
             <p className="subtitle has-text-grey">Please login to proceed.</p>
             <div className="box">
-              <form>
+              <form onSubmit={login}>
                 <div className="field">
                   <div className="control">
-                    <input className="input" type="email" placeholder="Your Email" />
+                    <input className="input"
+                      type="email"
+                      placeholder="Your Email"
+                      id="email"
+                      onChange={onChange}
+                    />
                   </div>
                 </div>
                 <div className="field">
                   <div className="control">
-                    <input className="input" type="password" placeholder="Your Password" />
+                    <input className="input"
+                      type="password"
+                      placeholder="Your Password"
+                      id="password"
+                      onChange={onChange}
+                    />
                   </div>
                 </div>
                 <button className="button is-block is-info is-large is-fullwidth">Login</button>
@@ -34,6 +48,11 @@ const Login = () => {
       </div>
     </section>
   );
+};
+
+Login.propTypes = {
+  login: PropType.func,
+  onChange: PropType.func
 };
 
 export default Login;
