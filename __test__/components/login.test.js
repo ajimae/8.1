@@ -3,18 +3,18 @@ import { mount, shallow } from 'enzyme';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import Signup from '../../src/components/container/Signup';
+import Login from '../../src/components/container/Login';
 
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
-describe('Signup Component Test', () => {
+describe('Login Component Test', () => {
   it('should return true if component exists', () => {
     const initialState = {};
     const store = mockStore(initialState);
     const wrapper = mount(<Provider store={store}>
-      <Signup />
+      <Login />
     </Provider>);
     expect(wrapper.find('.box').exists()).toBe(true);
     expect(wrapper.find('#email').exists()).toBe(true);
@@ -24,17 +24,17 @@ describe('Signup Component Test', () => {
     const initialState = {};
     const store = mockStore(initialState);
     const wrapper = mount(<Provider store={store}>
-      <Signup />
+      <Login />
     </Provider>);
     wrapper.find('.button').simulate('click');
   });
 });
-describe('<Signup /> shallow rendering tests', () => {
+describe('<Login /> shallow rendering tests', () => {
   const initialState = {};
   const store = mockStore(initialState);
 
   it('matches the snapshot', () => {
-    const tree = shallow(<Signup store={store} />);
+    const tree = shallow(<Login store={store} />);
     expect(tree).toMatchSnapshot();
   });
 });
