@@ -5,7 +5,7 @@ import isLoggedIn from '../../utilities/isLoggedIn';
 
 const NavBar = () => {
   const show = isLoggedIn() ? (
-    <NavLink className="nav-item" to="/question">
+    <NavLink className="nav-item" to="/ask">
       Ask a question
     </NavLink>
   ) : (
@@ -19,7 +19,7 @@ const NavBar = () => {
       <nav className="nav">
         <div className="nav-left">
           <Link className="nav-item" to="/">
-            Stackoverflowlite
+            <spn className="title is-4">Stackoverflowlite</spn>
           </Link>
         </div>
         <label htmlFor="menu-toggle" className="nav-toggle">
@@ -37,7 +37,7 @@ const NavBar = () => {
           </NavLink>
           {show}
           {isLoggedIn() ? (
-            <NavLink className="nav-item" to="">
+            <NavLink className="nav-item" to="/profile">
               Profile
             </NavLink>
           ) : (null)}

@@ -81,7 +81,6 @@ const Reaction = (props) => {
         </div>
       </div>
     </div>
-
   );
 };
 
