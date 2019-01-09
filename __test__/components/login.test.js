@@ -20,13 +20,39 @@ describe('Login Component Test', () => {
     expect(wrapper.find('#email').exists()).toBe(true);
     expect(wrapper.find('#password').exists()).toBe(true);
   });
-  it('should simulate a click event', () => {
+  it('should simulate a click event', async () => {
     const initialState = {};
     const store = mockStore(initialState);
+
+    const props = {
+      login: () => ({
+        type: 'USER_LOGIN_FAILURE'
+      }),
+      history: {
+        push: jest.fn()
+      }
+    };
+
     const wrapper = mount(<Provider store={store}>
-      <Login />
+      <Login {...props} />
     </Provider>);
     wrapper.find('.button').simulate('click');
+
+    const changeEvent = {
+      target: {
+        id: 1,
+        value: 'x'
+      }
+    };
+    wrapper.find('input').first().simulate('change', changeEvent);
+    const submitEvent = {
+      preventDefault: jest.fn()
+    };
+
+    const shallowWrapper = shallow(<Login store={store} {...props} />);
+
+    const instance = shallowWrapper.dive().instance();
+    await instance.handleSubmit(submitEvent);
   });
 });
 describe('<Login /> shallow rendering tests', () => {

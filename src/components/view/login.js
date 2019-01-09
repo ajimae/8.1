@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../static/styles/form.scss';
 import PropType from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Login = (props) => {
   const {
@@ -39,9 +40,9 @@ const Login = (props) => {
               </form>
             </div>
             <p className="has-text-grey">
-              <a href="../">Sign Up</a> &nbsp;·&nbsp;
-              <a href="../">Forgot Password</a> &nbsp;·&nbsp;
-              <a href="../">Need Help?</a>
+              <a href="/signup">Sign Up</a> &nbsp;·&nbsp;
+              <a href="#">Forgot Password</a> &nbsp;·&nbsp;
+              <a href="#">Need Help?</a>
             </p>
           </div>
         </div>
