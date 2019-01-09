@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../static/styles/form.scss';
 import PropType from 'prop-types';
-import { Link } from 'react-router-dom';
 
 const Login = (props) => {
   const {

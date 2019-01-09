@@ -5,7 +5,7 @@ import PropType from 'prop-types';
 
 const Reaction = (props) => {
   const {
-    questionProps, onChange, onSubmit
+    questionProps, onChange, onSubmit, answers
   } = props;
   return (
     <div className="container">
@@ -55,6 +55,7 @@ const Reaction = (props) => {
                     placeholder="Post your answer"
                     onChange={onChange}
                     id="answer"
+                    value={answers}
                     rows="10"
                   />
                   <br />
@@ -71,8 +72,7 @@ const Reaction = (props) => {
           <aside>
             <h3 className="title is-4">Related</h3>
             <article className="widget-content">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni esse architecto consectetur
-                     itaque tenetur excepturi fuga maxime consequatur repellat et.</p>
+              <p>Related questions go in here....</p>
               <a href="#">
                 <em>Show More</em>
               </a>
@@ -81,7 +81,6 @@ const Reaction = (props) => {
         </div>
       </div>
     </div>
-
   );
 };
 
