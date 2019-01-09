@@ -12,8 +12,11 @@ class Logout extends Component {
   componentWillMount() {
     localStorage.setItem('x-access-token', '');
     notifier('Logging you out...', 'success');
-    setTimeout(() => {
-      this.props.history.push('/', { prev: 'login' });
+    // setTimeout(() => {
+    //   this.props.history.push('/', { prev: 'login' });
+    // }, 5000);
+    return setTimeout(() => {
+      window.location.href = '/';
     }, 5000);
   }
 

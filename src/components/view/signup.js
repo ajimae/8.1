@@ -78,8 +78,8 @@ const Signup = (props) => {
               </form>
             </div>
             <p className="has-text-grey">
-              <a href="../">Login</a> &nbsp;·&nbsp;
-              <a href="../">Need Help?</a>
+              <a href="/login">Login</a> &nbsp;·&nbsp;
+              <a href="#">Need Help?</a>
             </p>
           </div>
         </div>

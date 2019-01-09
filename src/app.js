@@ -5,6 +5,7 @@ import configureStore from './store/configureStore';
 import Routes from './routes/Routes';
 
 const store = configureStore();
+window.store = store;
 
 ReactDOM.render((
   <Provider store={store}>

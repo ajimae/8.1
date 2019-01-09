@@ -8,10 +8,12 @@ import Login from '../components/container/Login';
 import NotFound from '../components/container/NotFound';
 import Signup from '../components/container/Signup';
 import Homepage from '../components/container/Home';
-import NavBar from '../components/view/navBar';
+import NavBar from '../components/container/NavBar';
 import Activity from '../components/container/Activity';
 import View from '../components/container/Reactions';
 import Logout from '../components/container/Logout';
+import Ask from '../components/container/Ask';
+import Profile from '../components/container/Profile';
 
 const history = createHistory();
 
@@ -27,6 +29,8 @@ const Routes = () => {
           <Route path={ROUTE_PATH.activity} component={Activity} />
           <Route path={ROUTE_PATH.reaction} component={View} />
           <Route path={ROUTE_PATH.logout} component={Logout} />
+          <Route path={ROUTE_PATH.ask} component={Ask} />
+          <Route path={ROUTE_PATH.Profile} component={Profile} />
           <Route component={NotFound} />
         </Switch>
       </div>

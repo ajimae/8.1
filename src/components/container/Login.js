@@ -33,7 +33,9 @@ class Login extends Component {
       return notifier(acxn.error.error, 'success');
     }
     notifier('Login successful', 'success');
-    return setTimeout(() => this.props.history.push('/activity', { prev: 'login' }), 5000);
+    return setTimeout(() => {
+      window.location.href = '/activity';
+    }, 5000);
   }
 
   render() {

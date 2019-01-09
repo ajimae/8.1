@@ -59,6 +59,7 @@ class Reaction extends Component {
           questionProps={this.state.questions}
           onChange={this.onChange}
           onSubmit={this.onSubmit}
+          answer={this.state.answer}
         />
       </div>
     );

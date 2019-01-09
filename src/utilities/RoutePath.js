@@ -4,9 +4,11 @@ const ROUTE_PATH = {
     signup: '/signup',
     login: '/login',
   },
-  activity: '/activity',
+  ask: '/ask',
+  logout: '/logout',
   reaction: '/view',
-  logout: '/logout'
+  profile: '/profile',
+  activity: '/activity'
 };
 
 export default ROUTE_PATH;
