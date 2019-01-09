@@ -5,6 +5,8 @@ const ROUTE_PATH = {
     login: '/login',
   },
   activity: '/activity',
+  reaction: '/view',
+  logout: '/logout'
 };
 
 export default ROUTE_PATH;

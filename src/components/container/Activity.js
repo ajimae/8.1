@@ -10,6 +10,7 @@ class Activity extends Component {
     this.state = {
       activity: {}
     };
+    this.showQuestion = this.showQuestion.bind(this);
   }
 
   async componentWillMount() {
@@ -17,6 +18,11 @@ class Activity extends Component {
     this.setState({
       activity: activities
     });
+  }
+
+  showQuestion(id) {
+    localStorage.setItem('id', id);
+    this.props.history.push('/view', { prev: 'activity' });
   }
 
   render() {
@@ -35,6 +41,7 @@ class Activity extends Component {
           {allQuestion && allQuestion
             .map((question, index) => (<ActivityView key={index}
               question={question}
+              showQuestion={this.showQuestion}
             />))}
         </div>
       </div>
@@ -44,6 +51,7 @@ class Activity extends Component {
 
 Activity.propTypes = {
   activity: PropType.func,
+  history: PropType.object,
 };
 
 const mapStateToProps = (state) => {

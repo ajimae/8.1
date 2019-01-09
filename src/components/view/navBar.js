@@ -1,15 +1,26 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import '../../static/styles/navbar.scss';
+import isLoggedIn from '../../utilities/isLoggedIn';
 
 const NavBar = () => {
+  const show = isLoggedIn() ? (
+    <NavLink className="nav-item" to="/question">
+      Ask a question
+    </NavLink>
+  ) : (
+    <NavLink className="nav-item" to="/login">
+        Login
+    </NavLink>
+  );
+
   return (
     <div className="container is-fluid">
       <nav className="nav">
         <div className="nav-left">
-          <a className="nav-item" to="/">
+          <Link className="nav-item" to="/">
             Stackoverflowlite
-          </a>
+          </Link>
         </div>
         <label htmlFor="menu-toggle" className="nav-toggle">
           <span />
@@ -24,12 +35,17 @@ const NavBar = () => {
           <NavLink className="nav-item" to="/activity">
             Activity
           </NavLink>
-          <NavLink className="nav-item" to="/signup">
-            Signup
-          </NavLink>
-          <NavLink className="nav-item" to="">
-            Profile
-          </NavLink>
+          {show}
+          {isLoggedIn() ? (
+            <NavLink className="nav-item" to="">
+              Profile
+            </NavLink>
+          ) : (null)}
+          {isLoggedIn() ? (
+            <NavLink className="nav-item" to="/logout">
+              Logout
+            </NavLink>
+          ) : (null)}
         </div>
       </nav>
     </div>
