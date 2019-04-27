@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 /**
- * @param {*} user
+ * @param {*} data
  * @returns object
  */
 export function askSuccess(data) {

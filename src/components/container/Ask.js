@@ -49,7 +49,7 @@ class Ask extends Component {
   render() {
     return (
       <div>
-        <ToastContainer />
+        <ToastContainer autoClose={3000} />
         <AskView
           onSubmit={this.onSubmit}
           onChange={this.onChange}

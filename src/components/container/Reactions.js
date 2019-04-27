@@ -39,14 +39,23 @@ class Reaction extends Component {
     });
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (isLoggedIn()) {
       const { id } = this.state.questions.data.Question[0];
       const data = {
         id,
         answer: this.state.answer
       };
-      return this.props.answer(data);
+      const postedAnswer = await this.props.answer(data);
+      const questions = await this.props.question(id);
+      this.setState({
+        questions,
+        answer: postedAnswer
+      });
+      this.setState({
+        answer: ''
+      });
+      return notifier('Answer posted successfully', 'success');
     }
     return notifier('Please login to post answer', 'success');
   }
@@ -54,26 +63,27 @@ class Reaction extends Component {
   render() {
     return (
       <div>
-        <ToastContainer />
+        <ToastContainer autoClose={3000} />
         <Reactions
           questionProps={this.state.questions}
           onChange={this.onChange}
           onSubmit={this.onSubmit}
-          answer={this.state.answer}
+          answers={this.state.answer}
         />
       </div>
     );
   }
 }
 
-Reaction.protoTypes = {
+Reaction.propTypes = {
   answer: PropType.func,
-  history: PropType.func,
+  history: PropType.object,
   question: PropType.func,
 };
 
 const mapStateToProps = (state) => {
   return {
+    ...state,
     answerProps: state.answer,
     questionProps: state.question
   };

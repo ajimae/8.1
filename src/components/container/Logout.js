@@ -23,7 +23,7 @@ class Logout extends Component {
   render() {
     return (
       <center>
-        <ToastContainer />
+        <ToastContainer autoClose={3000} />
         <h1 className="title is-3">
         Logout Page</h1>
       </center>

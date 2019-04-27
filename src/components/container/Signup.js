@@ -41,7 +41,7 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <ToastContainer />
+        <ToastContainer autoClose={3000} />
         <SignupView
           signup={this.handleSubmit}
           onChange={this.handleChange}

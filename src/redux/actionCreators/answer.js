@@ -2,13 +2,13 @@
 import axios from 'axios';
 
 /**
- * @param {*} user
+ * @param {*} data
  * @returns object
  */
-export function answerSuccess(user) {
+export function answerSuccess(data) {
   return {
     type: 'POST_ANSWER_SUCCESS',
-    user
+    data
   };
 }
 

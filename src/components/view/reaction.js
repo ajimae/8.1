@@ -84,8 +84,11 @@ const Reaction = (props) => {
   );
 };
 
-Reaction.protoTypes = {
-  questionProps: PropType.object
+Reaction.propTypes = {
+  answers: PropType.string,
+  onChange: PropType.func,
+  onSubmit: PropType.func,
+  questionProps: PropType.object,
 };
 
 export default Reaction;
